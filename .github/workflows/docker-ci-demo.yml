@@ -3,7 +3,7 @@ name: Push Docker Image to Docker Hub
 on:
   push:
     branches:
-      - 'master'   # master 브랜치에 push되면 실행
+      - 'main'   # master 브랜치에 push되면 실행
     tags:
       - '**'       # 모든 태그 push 시 실행
 
@@ -19,7 +19,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          images: leecloudo/nodejs-ci  # 사용할 Docker Hub 저장소
+          images: noviceuser23/nodejs-ci  # 사용할 Docker Hub 저장소
           tag-semver: |
             {{version}}
             {{major}}.{{minor}}
